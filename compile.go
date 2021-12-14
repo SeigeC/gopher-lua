@@ -1654,10 +1654,10 @@ func patchCode(context *funcContext) { // {{{
 } // }}}
 
 func Compile(chunk []ast.Stmt, name string) (proto *FunctionProto, err error) { // {{{
-	return CompileWithParName(chunk, name)
+	return CompileWithParNames(chunk, name)
 } // }}}
 
-func CompileWithParName(chunk []ast.Stmt, name string, parNames ...string) (proto *FunctionProto, err error) { // {{{
+func CompileWithParNames(chunk []ast.Stmt, name string, parNames ...string) (proto *FunctionProto, err error) { // {{{
 	defer func() {
 		if rcv := recover(); rcv != nil {
 			if _, ok := rcv.(*CompileError); ok {
